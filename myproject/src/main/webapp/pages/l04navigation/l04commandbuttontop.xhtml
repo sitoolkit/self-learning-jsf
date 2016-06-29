@@ -1,0 +1,10 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://xmlns.jcp.org/jsf/html">
+  <h:body>
+    <h:form>
+      <h:outputText value="テキストボックスに名前を入力し、次へボタンを押してください"/><br/>
+      <h:inputText value="#{l04CommandButtonBean.name}"/>
+      <h:commandButton value="次へ" action="#{l04CommandButtonController.gotoPage}"/>
+    </h:form>
+  </h:body>
+</html>

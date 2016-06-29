@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>myproject</artifactId>
+  <packaging>war</packaging>
+  <groupId>a.b.c</groupId>
+
+  <!-- The Basics -->
+  <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- このdependencyはEclipseでFaceletsのコードアシストを有効にするために必要です。 -->
+    <dependency>
+      <groupId>com.sun.faces</groupId>
+      <artifactId>jsf-impl</artifactId>
+      <version>2.2.12</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+    <as.host>localhost</as.host>
+    <as.port>8080</as.port>
+    <toolsdir>${project.basedir}/tools</toolsdir>
+    <was-liberty.version>8.5.5.9</was-liberty.version>
+    <was-liberty.plugin.version>1.1</was-liberty.plugin.version>
+  </properties>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <!-- Build Settings -->
+  <build>
+    <outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>META-INF/persistence.xml</include>
+        </includes>
+        <filtering>true</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/webapp</directory>
+        <targetPath>${webappDirectory}</targetPath>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+  </build>
+
+  <!-- Environment Settings -->
+  <profiles>
+    <profile>
+      <id>was-liberty</id>
+      <properties>
+        <maven.test.skip>true</maven.test.skip>
+      </properties>
+      <build>
+        <defaultGoal>package liberty:run-server</defaultGoal>
+        <resources>
+          <resource>
+            <directory>${toolsdir}/was-liberty</directory>
+            <includes>
+              <include>server.xml</include>
+            </includes>
+            <filtering>true</filtering>
+            <targetPath>${project.build.directory}</targetPath>
+          </resource>
+        </resources>
+        <plugins>
+          <plugin>
+            <groupId>net.wasdev.wlp.maven.plugins</groupId>
+            <artifactId>liberty-maven-plugin</artifactId>
+            <version>${was-liberty.plugin.version}</version>
+            <configuration>
+              <assemblyArtifact>
+                <groupId>com.ibm.websphere.appserver.runtime</groupId>
+                <artifactId>wlp-javaee7</artifactId>
+                <version>${was-liberty.version}</version>
+                <type>zip</type>
+              </assemblyArtifact>
+              <configFile>${project.build.directory}/server.xml</configFile>
+              <jvmOptionsFile>${toolsdir}/was-liberty/jvm.options</jvmOptionsFile>
+            </configuration>
+            <executions>
+              <execution>
+                <id>start-server</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>start-server</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>stop-server</id>
+                <phase>post-integration-test</phase>
+                <goals>
+                  <goal>stop-server</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+      <repositories>
+        <repository>
+          <releases>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <id>ibm-maven-repo</id>
+          <name>ibm-maven-repo</name>
+          <url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <releases>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <id>ibm-maven-repo</id>
+          <name>ibm-maven-repo</name>
+          <url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/maven/repository/</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>sonatype-nexus-snapshots</id>
+          <name>Sonatype Nexus Snapshots</name>
+          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+</project>

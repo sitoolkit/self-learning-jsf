@@ -8,6 +8,6 @@ import javax.inject.Named;
 public class L04CommandLinkController {
 
     public String gotoPage(){
-        return("l04commandlinknext");
+        return "l04commandlinknext";
     }
 }

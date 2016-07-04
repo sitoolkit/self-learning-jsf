@@ -8,10 +8,10 @@ import javax.inject.Named;
 public class PracticeL04CommandLinkController {
 
     public String gotoNext(){
-        return("pl04commandlinknext");
+        return "pl04commandlinknext";
     }
 
     public String gotoAfterNext(){
-	    return("pl04commandlinknext2");
+	    return "pl04commandlinknext2";
 	}
 }

@@ -14,12 +14,12 @@ public class PracticeL04CommandButtonController {
     public String gotoPage(){
 
     	if("user".equals(bean.getId()) && "password".equals(bean.getPassword())){
-            return("pl04commandbuttonnext");
+            return "pl04commandbuttonnext";
     	}
-    	return("pl04commandbuttonerrorpage");
+    	return "pl04commandbuttonerrorpage";
     }
 
     public String gotoTop(){
-    	return("pl04commandbuttontop");
+    	return "pl04commandbuttontop";
     }
 }

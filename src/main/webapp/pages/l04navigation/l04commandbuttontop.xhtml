@@ -1,10 +1,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
- xmlns:h="http://xmlns.jcp.org/jsf/html">
+ xmlns:h="http://xmlns.jcp.org/jsf/html"
+ xmlns:f="http://xmlns.jcp.org/jsf/core">
   <h:body>
     <h:form>
       <h:outputText value="テキストボックスに名前を入力し、次へボタンを押してください"/><br/>
-      <h:inputText value="#{l04CommandButtonBean.name}"/>
+      <h:inputText id="name1" value="#{l04CommandButtonBean.name}">
+        <f:validateLength maximum="3"/>
+      </h:inputText>
       <h:commandButton value="次へ" action="#{l04CommandButtonController.gotoPage}"/>
+	  <br/><h:message for="name1"/>
     </h:form>
   </h:body>
 </html>

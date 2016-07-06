@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project basedir="." default="zip-export" name="myproject">
+    <target description="A zip file make of the default state." name="zip-export">
+        <zip destfile="self-learning-jsf-master.zip"
+            basedir="."
+            update="true"
+            excludes="**/target/**
+            ,**/src/main/java/l**/**
+            ,**/src/main/webapp/pages/**">
+        </zip>
+    </target>
+</project>

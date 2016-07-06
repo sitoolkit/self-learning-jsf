@@ -1,0 +1,6 @@
+/target/
+/tools/hibernate-tools/target
+/tools/mysql/data/
+/tools/mysql/target
+/tools/mysql/.path
+.DS_Store

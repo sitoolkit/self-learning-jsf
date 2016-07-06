@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://xmlns.jcp.org/jsf/html"
+ xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <head>
+    <meta charset="UTF-8"/>
+      <title>DataTable Sample</title>
+  </head>
+  <body>
+    <b>今月の図書</b>
+    <h:dataTable border="1" value="#{l01DataTable.value}" var="item">
+      <h:column>
+        <f:facet name="header">書籍名</f:facet>
+        <h:outputText value="#{item.name}"/>
+      </h:column>
+      <h:column>
+        <f:facet name="header">著者</f:facet>
+        <h:outputText value="#{item.auther}"/>
+      </h:column>
+      <h:column>
+        <f:facet name="header">価格（円）</f:facet>
+        <h:outputText value="#{item.price}"/>
+      </h:column>
+    </h:dataTable>
+  </body>
+</html>

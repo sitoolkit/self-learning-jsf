@@ -1,11 +1,11 @@
-package l04navigation;
+package l03navigation;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class PracticeL04CommandButtonBean {
+public class PracticeL03CommandButtonBean {
 
 	private String id;
 	private String password;

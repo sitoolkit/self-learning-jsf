@@ -1,11 +1,11 @@
-package l04navigation;
+package l03navigation;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class PracticeL04CommandLinkController {
+public class PracticeL03CommandLinkController {
 
     public String gotoNext(){
         return "pl04commandlinknext";

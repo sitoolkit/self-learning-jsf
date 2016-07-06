@@ -1,4 +1,4 @@
-package l04navigation;
+package l03navigation;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -6,20 +6,20 @@ import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class PracticeL04CommandButtonController {
+public class PracticeL03CommandButtonController {
 
 	@Inject
-	PracticeL04CommandButtonBean bean;
+	PracticeL03CommandButtonBean bean;
 
     public String gotoPage(){
 
     	if("user".equals(bean.getId()) && "password".equals(bean.getPassword())){
-            return "pl04commandbuttonnext";
+            return "pl03commandbuttonnext";
     	}
-    	return "pl04commandbuttonerrorpage";
+    	return "pl03commandbuttonerrorpage";
     }
 
     public String gotoTop(){
-    	return "pl04commandbuttontop";
+    	return "pl03commandbuttontop";
     }
 }

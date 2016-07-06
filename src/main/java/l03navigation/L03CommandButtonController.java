@@ -1,13 +1,13 @@
-package l04navigation;
+package l03navigation;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class L04CommandLinkController {
+public class L03CommandButtonController {
 
     public String gotoPage(){
-        return "l04commandlinknext";
+        return "l04commandbuttonnext";
     }
 }

@@ -1,11 +1,13 @@
 package l04scope;
 
+import java.io.Serializable;
+
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 @Named
 @ViewScoped
-public class L04ViewScopedBean {
+public class L04ViewScopedBean implements Serializable {
 
 	private int count;
 	

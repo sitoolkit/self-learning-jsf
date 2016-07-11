@@ -8,6 +8,6 @@ import javax.inject.Named;
 public class L03CommandButtonController {
 
     public String gotoPage(){
-        return "l04commandbuttonnext";
+        return "l03commandbuttonnext";
     }
 }

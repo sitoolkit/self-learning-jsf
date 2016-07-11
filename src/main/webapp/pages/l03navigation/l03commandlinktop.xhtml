@@ -1,8 +1,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
- xmlns:h="http://xmlns.jcp.org/jsf/html">
+ xmlns:h="http://xmlns.jcp.org/jsf/html"
+ xmlns:f="http://xmlns.jcp.org/jsf/core">
   <h:body>
     <h:form>
-      <h:commandLink value="次へ" action="#{l03CommandLinkController.gotoPage}"/>
+      <h:outputText value="テキストボックスに名前を入力し、次へボタンを押してください"/><br/>
+      <h:inputText id="name2" value="#{l03CommandLinkBean.name}" label="name">
+        <f:validateLength maximum="10"/>
+      </h:inputText>
+        <h:commandLink action="#{l03CommandLinkController.gotoPage}">
+  	    <h:graphicImage value="/resources/images/nextbutton_s.png" />
+	  </h:commandLink>
+	  <br/><h:message for="name2"/> 
     </h:form>
   </h:body>
 </html>

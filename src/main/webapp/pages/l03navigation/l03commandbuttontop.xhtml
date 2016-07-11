@@ -4,7 +4,7 @@
   <h:body>
     <h:form>
       <h:outputText value="テキストボックスに名前を入力し、次へボタンを押してください"/><br/>
-      <h:inputText id="name1" value="#{l03CommandButtonBean.name}">
+      <h:inputText id="name1" value="#{l03CommandButtonBean.name}" label="name">
         <f:validateLength maximum="3"/>
       </h:inputText>
       <h:commandButton value="次へ" action="#{l03CommandButtonController.gotoPage}"/>

@@ -16,7 +16,7 @@ public class PracticeL03CommandButtonController {
     	if("user".equals(bean.getId()) && "password".equals(bean.getPassword())){
             return "pl03commandbuttonnext";
     	}
-    	return "pl03commandbuttonerrorpage";
+    	return "pl03errorpage";
     }
 
     public String gotoTop(){

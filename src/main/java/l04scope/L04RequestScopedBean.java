@@ -1,25 +1,11 @@
 package l04scope;
 
-import java.io.Serializable;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 @Named
 @RequestScoped
-public class L04RequestScopedBean implements Serializable {
+public class L04RequestScopedBean extends L04ScopedBaseBean {
 
-	private int count;
-	
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public void countUp(){
-        count++;
-    }	
+	private static final long serialVersionUID = 1739793461001721279L;
 }

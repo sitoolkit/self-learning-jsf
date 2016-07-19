@@ -3,8 +3,15 @@
  xmlns:f="http://java.sun.com/jsf/core">
   <h:body>
     <h:form>
-      <h:outputText value="現在のカウントは#{l04ViewScopedBean.count}です。" /><br/>
-      <h:commandButton value="カウントアップ" actionListener="#{l04ViewScopedBean.countUp}" action="l04scope" />
+      <h2>ApplicationScoped</h2>
+      <h:outputText value="現在のカウントは#{l04ApplicationScopedBean.count}です。" /><hr/>
+      <h2>SessionScoped</h2>
+      <h:outputText value="現在のカウントは#{l04SessionScopedBean.count}です。" /><br/><hr/>
+      <h2>RequestScoped</h2>
+      <h:outputText value="現在のカウントは#{l04RequestScopedBean.count}です。" /><br/> <hr/>
+      <h2>ViewScoped</h2>
+      <h:outputText value="現在のカウントは#{l04ViewScopedBean.count}です。" /><br/><hr/>
+      <h:commandButton value="カウントアップ" actionListener="#{l04ScopedBean.countUp}" action="l04scope" immediate="true"/>
     </h:form>
   </h:body>
 </html>

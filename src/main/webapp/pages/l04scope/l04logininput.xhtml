@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://xmlns.jcp.org/jsf/html"
+ xmlns:f="http://java.sun.com/jsf/core">
+  <h:body>
+    <h:form>    
+      <h:outputText value="ユーザーID、パスワードを入力し、「ログイン」ボタンをクリックしてください。"/><br/>
+      <h:outputText value="IDはuser,パスワードはpasswordです。"/><br/>
+      <h:outputText value="ユーザーID"/>
+      <h:inputText id="user" value="#{l04LoginFlowBean.user}" label="user" required="true"/>
+      <h:outputText value="パスワード"/>
+      <h:inputText id="password" value="#{flowScope.password}" label="password" required="true"/>
+      <h:commandButton value="ログイン" action="#{l04LoginFlowBean.login}" /><br/><hr/>
+<!--           <h:commandButton value="新規ユーザー登録" action="second" /> -->
+      <h:outputLabel value="userプロパティ値:#{l04LoginFlowBean.user}"/><br/>
+      <h:outputLabel value="passwordプロパティ値:#{flowScope.password}"/>
+    </h:form>
+  </h:body>
+</html>

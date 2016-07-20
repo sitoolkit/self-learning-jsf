@@ -2,14 +2,14 @@ package l04scope;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.context.Flash;
 import javax.inject.Named;
 
 @Named
-@RequestScoped
 public class L04FlashScopedBean implements Serializable {
+
+	private static final long serialVersionUID = 9193259872416512500L;
 
 	private int count;
 	

@@ -7,5 +7,5 @@ import javax.inject.Named;
 @ViewScoped
 public class L04ViewScopedBean extends L04ScopedBaseBean {
 
- 	private static final long serialVersionUID = -7483112532389615589L;
+    private static final long serialVersionUID = -7483112532389615589L;
 }

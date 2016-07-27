@@ -7,30 +7,29 @@ import javax.inject.Named;
 
 @Named
 @ConversationScoped
-public class L04ConversationScopedBean extends L04ScopedBaseBean{
+public class L04ConversationScopedBean extends L04ScopedBaseBean {
 
-	private static final long serialVersionUID = -8549295506668633194L;
+    private static final long serialVersionUID = -8549295506668633194L;
 
-	@Inject
-	private Conversation con;
+    @Inject
+    private Conversation con;
 
-	public void start() {
-		if(con.isTransient()){
-			con.begin();
-		}
-	}
-	
-	public void end() {
-		con.end();
-	}
+    public void start() {
+        if (con.isTransient()) {
+            con.begin();
+        }
+    }
+
+    public void end() {
+        con.end();
+    }
 
     public boolean isState() {
         return con.isTransient();
     }
-    
+
     @Override
-    public void countUp(){
-        this.setCount(this.getCount()+1);
+    public void countUp() {
+        this.setCount(this.getCount() + 1);
     }
 }
-

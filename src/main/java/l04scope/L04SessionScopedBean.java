@@ -7,5 +7,5 @@ import javax.inject.Named;
 @SessionScoped
 public class L04SessionScopedBean extends L04ScopedBaseBean {
 
-	private static final long serialVersionUID = 4045047419841989645L;
+    private static final long serialVersionUID = 4045047419841989645L;
 }

@@ -11,17 +11,17 @@ import javax.inject.Named;
 @Named
 @Dependent
 public class L04QuestionRegFlowDefinition {
-    
-	private final String flowId = "questionFlow";
 
-	public String getFlowId() {
-		return flowId;
-	}
+    private final String flowId = "questionFlow";
 
-	@Produces
+    public String getFlowId() {
+        return flowId;
+    }
+
+    @Produces
     @FlowDefinition
-    public Flow defineFlow(@FlowBuilderParameter FlowBuilder flowBuilder){
-        
+    public Flow defineFlow(@FlowBuilderParameter FlowBuilder flowBuilder) {
+
         flowBuilder.initializer("#{l04QuestionRegBean.startQuestion()}");
         flowBuilder.finalizer("#{l04QuestionRegBean.endQuestion()}");
         flowBuilder.id("", flowId);
@@ -30,5 +30,5 @@ public class L04QuestionRegFlowDefinition {
         flowBuilder.viewNode("regSecond", "/pages/l04scope/l04regsecond.xhtml");
 
         return flowBuilder.getFlow();
-	}
+    }
 }

@@ -5,8 +5,8 @@ import javax.inject.Named;
 
 @Named
 @ApplicationScoped
-public class L04ApplicationScopedBean extends L04ScopedBaseBean{
+public class L04ApplicationScopedBean extends L04ScopedBaseBean {
 
-	private static final long serialVersionUID = 5468350040856203289L;
+    private static final long serialVersionUID = 5468350040856203289L;
 
 }

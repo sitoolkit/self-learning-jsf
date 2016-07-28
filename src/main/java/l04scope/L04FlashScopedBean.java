@@ -1,31 +1,32 @@
 package l04scope;
 
-import java.io.Serializable;
+import java.util.Map;
 
 import javax.faces.context.FacesContext;
-import javax.faces.context.Flash;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
-public class L04FlashScopedBean implements Serializable {
+public class L04FlashScopedBean extends L04ScopedBaseBean {
 
     private static final long serialVersionUID = 9193259872416512500L;
 
-    private int count;
+    private static final String redirectQuery = "?faces-redirect=true";
 
-    public int getCount() {
-        return count;
-    }
+    @Inject
+    L04RequestScopedBean request;
 
-    public void setCount(int count) {
-        this.count = count;
-    }
+    public String transition() {
 
-    Flash flash = FacesContext.getCurrentInstance().getExternalContext().getFlash();
+        request.countUp();
+        super.countUp();
+        FacesContext.getCurrentInstance().getExternalContext().getFlash().put("Key", this);
 
-    public String redirect() {
-        count++;
-        flash.put("Key", this);
-        return "l04flashscoped.xhtml?faces-redirect=true";
+        Map<String, String> reqestParam = FacesContext.getCurrentInstance().getExternalContext()
+                .getRequestParameterMap();
+        if (reqestParam.get("redirect") == null) {
+            return "l04flashscoped.xhtml";
+        }
+        return "l04flashscoped.xhtml" + redirectQuery;
     }
 }

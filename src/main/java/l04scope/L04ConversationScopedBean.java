@@ -27,9 +27,4 @@ public class L04ConversationScopedBean extends L04ScopedBaseBean {
     public boolean isState() {
         return con.isTransient();
     }
-
-    @Override
-    public void countUp() {
-        this.setCount(this.getCount() + 1);
-    }
 }

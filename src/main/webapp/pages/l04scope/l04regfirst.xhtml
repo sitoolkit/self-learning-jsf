@@ -8,10 +8,10 @@
   <h:body>
     登録するユーザー名、パスワードを入力して下さい。
     <h:form>
-      <h:outputText value="ユーザーID"/>
-      <h:inputText id="user" value="#{l04AccountRegBean.user}" label="user"/><br/>
-      <h:outputText value="パスワード"/>
-      <h:inputText id="password" value="#{l04AccountRegBean.password}" label="password"/><br/><hr/>
+      <h:outputLabel for="user" value="ユーザーID"/>
+      <h:inputText id="user" value="#{l04AccountRegBean.user}" label="ユーザーID"/>
+      <h:outputLabel for="password" value="パスワード"/>
+      <h:inputText id="password" value="#{l04AccountRegBean.password}" label="パスワード"/><br/><hr/>
       <!-- <h:commandButton value="確認画面へ" action="confirm"/><br/> -->
       <h:commandButton value="秘密の質問を登録" action="question"/><br/>
     </h:form>

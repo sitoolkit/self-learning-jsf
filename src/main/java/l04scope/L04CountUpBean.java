@@ -1,10 +1,12 @@
 package l04scope;
 
+import java.io.Serializable;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
-public class L04ScopedBean extends L04ScopedBaseBean {
+public class L04CountUpBean implements Serializable {
 
     private static final long serialVersionUID = 5468350040856203289L;
 
@@ -20,11 +22,10 @@ public class L04ScopedBean extends L04ScopedBaseBean {
     @Inject
     L04ViewScopedBean view;
 
-    @Override
     public void countUp() {
-        application.setCount(application.getCount() + 1);
-        session.setCount(session.getCount() + 1);
-        request.setCount(request.getCount() + 1);
-        view.setCount(view.getCount() + 1);
+        application.countUp();
+        session.countUp();
+        request.countUp();
+        view.countUp();
     }
 }

@@ -7,14 +7,10 @@
   </h:head>
   <h:body>
     <h:form>
-      <h:outputText value="ユーザー名：" />
-      <h:outputText value="#{l04AccountRegBean.user}" /><br/>
-      <h:outputText value="パスワード：" />
-      <h:outputText value="#{l04AccountRegBean.password}" /><br/>
-      <h:outputText value="質問：" />
-      <h:outputText value="#{l04QuestionRegBean.select}" /><br/>
-      <h:outputText value="回答：" />
-      <h:outputText value="#{l04QuestionRegBean.answer}" /><br/><hr/>
+      <h:outputText value="ユーザー名：#{l04AccountRegBean.user}" /><br/>
+      <h:outputText value="パスワード：#{l04AccountRegBean.password}" /><br/>
+      <h:outputText value="質問：#{l04QuestionRegBean.select}" /><br/>
+      <h:outputText value="回答：#{l04QuestionRegBean.answer}" /><br/><hr/>
       <h:commandButton value="入力画面に戻る" action="regFlow" /><br/>
       <h:commandButton value="終了" action="index" />
     </h:form>

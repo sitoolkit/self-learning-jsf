@@ -17,5 +17,6 @@ abstract class L04ScopedBaseBean implements Serializable {
     }
 
     public void countUp() {
-    }
+        this.count++;
+    }    
 }

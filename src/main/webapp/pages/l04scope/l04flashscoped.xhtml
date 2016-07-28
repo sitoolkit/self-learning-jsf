@@ -3,8 +3,14 @@
  xmlns:f="http://java.sun.com/jsf/core">
   <h:body>
     <h:form>
-    <h:commandButton value="redirect" action="#{l04FlashScopedBean.redirect}" /><br/>
-    <H3><h:outputText value="#{flash.Key.count}"/></H3>
+    <h2>ApplicationScoped</h2>
+    <H3><h:outputText value="#{flash.Key.count}"/></H3><hr/>
+    <h2>RequestScoped</h2>
+    <H3><h:outputText value="#{l04RequestScopedBean.count}" /></H3><hr/>
+    <h:commandButton value="forward" action="#{l04FlashScopedBean.transition}" />
+    <h:commandButton value="redirect" action="#{l04FlashScopedBean.transition}" >
+      <f:param name="redirect" value="redirect"/> 
+    </h:commandButton>
     </h:form>
   </h:body>
 </html>

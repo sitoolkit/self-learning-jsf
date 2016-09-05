@@ -7,6 +7,7 @@
     <feature>jsf-2.2</feature>
     <feature>jpa-2.1</feature>
     <feature>cdi-1.2</feature>
+    <feature>beanValidation-1.1</feature>
   </featureManager>
 
   <!-- This template enables security. To get the full use of all the capabilities,

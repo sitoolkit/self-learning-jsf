@@ -11,5 +11,5 @@
 
 ## 学習手順
 
-[Wiki](https://github.com/sitoolkit/self-learning-jsf/wiki)を参照
+[Wiki](https://github.com/sitoolkit/self-learning-jsf/wiki)を参照してください。
 
